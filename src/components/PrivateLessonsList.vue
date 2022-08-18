@@ -80,6 +80,7 @@ export default {
         console.log("privatni cas " + privatnicas);
         console.log(privatnicas);
         this.$router.push({ name: 'Reservation', params: {privatnicas}});
+        //ovde treba da se upisuje u bazu 
 
       }
       else alert("You cannot make reservations. Log in first!");
