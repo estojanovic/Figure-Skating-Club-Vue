@@ -11,6 +11,18 @@ export default new Vuex.Store({
     flight: null,
     flightInformation: {
       day: '', time: '', coach: ''
+    },
+
+    iceskates: [],
+    iceskate: null,
+    iceskateInformation:{
+      model: '', size: ''
+    },
+
+    trainings: [],
+    training: null,
+    trainingInformation:{
+      day: '', time: '', coach1: '', coach2: ''
     }
 
   },   
@@ -39,6 +51,26 @@ export default new Vuex.Store({
 
     setFlights(state, flights) {
       state.flights = flights;
+    },
+
+    setIceskateInformation(state, iceskate){
+      state.iceskateInformation.model = iceskate.model;
+      state.iceskateInformation.size = iceskate.size;
+    },
+
+    setIceskates(state, iceskates){
+      state.iceskates = iceskates;
+    },
+
+    setTrainingInformation(state, training){
+      state.trainingInformation.day = training.day;
+      state.trainingInformation.time = training.time;
+      state.trainingInformation.coach1 = training.coach1;
+      state.trainingInformation.coach2 = training.coach2;
+    },
+
+    setTrainings(state, trainings){
+      state.trainings = trainings;
     }
 
   },
@@ -96,7 +128,30 @@ export default new Vuex.Store({
       })
           .then( obj => obj.json() )
           .then( res => commit('setFlights', res));
+    },
+
+    fetchIceskates({ commit }){
+      fetch('http://localhost:7000/admin/iceskates',{
+        headers: {
+          'authorization': `Bearer ${localStorage.token}`
+        },
+        method: 'GET'
+      })
+          .then( obj => obj.json() )
+          .then( res => commit('setIceskates', res));
+    },
+
+    fetchTrainings({ commit }){
+      fetch('http://localhost:7000/admin/trainings',{
+        headers: {
+          'authorization': `Bearer ${localStorage.token}`
+        },
+        method: 'GET'
+      })
+          .then( obj => obj.json() )
+          .then( res => commit('setTrainings', res));
     }
+    
 
 
 

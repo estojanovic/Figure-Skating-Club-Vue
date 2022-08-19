@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Rezervisite svoj privatni cas klizanja "/>
+    <img alt="Vue logo" src="../assets/iceskating.jpg" width="100%" height="auto">
+    
   </div>
 </template>
 

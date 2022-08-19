@@ -5,6 +5,8 @@ import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Reservation from '../views/Reservation.vue'
 import PrivateLessons from '../views/PrivateLessons.vue'
+import Iceskates from '../views/Iceskates.vue'
+import Trainings from '../views/Trainings.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,6 +42,16 @@ const routes = [
     path: '/reservation',
     name: 'Reservation',
     component: Reservation
+  },
+  {
+    path: '/iceskates',
+    name: 'Iceskates',
+    component: Iceskates
+  },
+  {
+    path: '/trainings',
+    name: 'Trainings',
+    component: Trainings
   }
 ]
 
