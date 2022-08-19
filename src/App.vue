@@ -15,7 +15,7 @@
               <b-nav-item to="/trainings" style="background-color: #e3f2fd;" >Trainings</b-nav-item> 
               <b-nav-item to="/privatelessons" style="background-color: #e3f2fd;" >Private Lessons</b-nav-item> 
             </b-nav-item-dropdown>
-            <b-nav-item to="/reservation">Reservations</b-nav-item>
+            <b-nav-item v-if="token" to="/reservation">Reservations</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

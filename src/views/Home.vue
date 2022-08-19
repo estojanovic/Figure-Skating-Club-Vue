@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Rezervisite svoj privatni cas klizanja "/>
+    <HelloWorld msg="Ice skating private lessons "/>
     <img alt="Vue logo" src="../assets/iceskating.jpg" width="100%" height="auto">
     
   </div>
