@@ -1,5 +1,7 @@
 <template>
   <div>
+    <p></p>
+    <h3> Available Ice skates </h3>
     <b-pagination
         v-model="currentPage"
         :total-rows="iceskatesTable"

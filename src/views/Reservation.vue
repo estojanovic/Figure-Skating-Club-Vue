@@ -2,9 +2,11 @@
   
   <div id="app"  v-if="this.token">
   
-    <Header subtitle="AAA"/>
-    <h2>Your private lesson</h2>
-
+    <p></p>
+    <h3>Reservations</h3>
+    <p></p>
+    <h5>Your list of private lessons:</h5>
+    <p></p>
     <ul class="list-group">
       <li class="list-group-item">Day:  {{ this.privatelessonInformation.day }}  </li>
       <li class="list-group-item">Time:  {{ this.privatelessonInformation.time }}  </li>
@@ -17,14 +19,14 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+
 import { mapActions, mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'Reservation',
 
   components: {
-    Header
+   
   },
 
   props: {

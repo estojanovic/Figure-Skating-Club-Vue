@@ -1,5 +1,7 @@
 <template>
   <div>
+    <p></p>
+    <h3> Private Lessons </h3>
     <b-pagination
         v-model="currentPage"
         :total-rows="privatelessonsTable"
@@ -25,6 +27,8 @@
         :per-page="perPage"
         aria-controls="image-table"
     ></b-pagination>
+
+    <p v-if="token">Chosen lesson:  {{ this.privatelessonInformation.day }}  {{ this.privatelessonInformation.time }}  {{ this.privatelessonInformation.coach }}  </p>
     <b-button v-on:click="goToReservation()" >Reserve</b-button>
   </div>
 </template>
@@ -71,7 +75,8 @@ export default {
 
     rowClicked(record) {
       this.setPrivatelessonInformation(record);
-      console.log("kliknuo na "+ this.privatelessonInformation.day)
+      //console.log("kliknuo na "+ this.privatelessonInformation.day)
+      
     },
     goToReservation() {
       if (this.token !== "") {
@@ -79,7 +84,7 @@ export default {
         console.log("privatni cas " + privatnicas);
         console.log(privatnicas);
         this.$router.push({ name: 'Reservation', params: {privatnicas}});
-        //ovde treba da se upisuje u bazu 
+        //ovde treba da se upisuje u bazu i brise iz tabele privatelessons
 
       }
       else alert("You cannot make reservations. Log in first!");

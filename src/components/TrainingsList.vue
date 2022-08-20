@@ -1,12 +1,8 @@
 <template>
   <div>
-    <b-pagination
-        v-model="currentPage"
-        :total-rows="trainingsTable"
-        :per-page="perPage"
-        aria-controls="image-table"
-    ></b-pagination>
-
+    <p></p>
+    <h3> Training schedule </h3>
+    
     <b-table class="table table-hover"
         id="image-table"
         hover
@@ -19,12 +15,7 @@
         @row-clicked="rowClicked"
     >
     </b-table>
-    <b-pagination
-        v-model="currentPage"
-        :total-rows="trainingsTable.length"
-        :per-page="perPage"
-        aria-controls="image-table"
-    ></b-pagination>
+   
    
   </div>
 </template>
