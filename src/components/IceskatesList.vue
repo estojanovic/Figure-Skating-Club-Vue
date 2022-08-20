@@ -53,7 +53,6 @@ export default {
     ]),
     iceskatesTable: function () {
       return this.iceskates;
-      // .filter(book => book.libraryId == this.$route.params.id); //mora da bude == umesto ===, jer inace nece da ih nadje kada se uradi drugi put
     }
   },
 

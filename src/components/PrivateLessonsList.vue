@@ -2,7 +2,7 @@
   <div>
     <b-pagination
         v-model="currentPage"
-        :total-rows="flightsTable"
+        :total-rows="privatelessonsTable"
         :per-page="perPage"
         aria-controls="image-table"
     ></b-pagination>
@@ -11,7 +11,7 @@
         id="image-table"
         hover
         fixed
-        :items="flightsTable"
+        :items="privatelessonsTable"
         :fields="fields"
         small
         :per-page="perPage"
@@ -21,7 +21,7 @@
     </b-table>
     <b-pagination
         v-model="currentPage"
-        :total-rows="flightsTable.length"
+        :total-rows="privatelessonsTable.length"
         :per-page="perPage"
         aria-controls="image-table"
     ></b-pagination>
@@ -47,13 +47,12 @@ export default {
 
   computed: {
     ...mapState([
-      'flights',
+      'privatelessons',
       'token',
-        'flightInformation'
+      'privatelessonInformation'
     ]),
-    flightsTable: function () {
-      return this.flights;
-      // .filter(book => book.libraryId == this.$route.params.id); //mora da bude == umesto ===, jer inace nece da ih nadje kada se uradi drugi put
+    privatelessonsTable: function () {
+      return this.privatelessons;
     }
   },
 
@@ -67,16 +66,16 @@ export default {
   methods: {
 
     ...mapMutations([
-      'setFlightInformation'
+      'setPrivatelessonInformation'
     ]),
 
     rowClicked(record) {
-      this.setFlightInformation(record);
-      console.log("kliknuo na "+ this.flightInformation.day)
+      this.setPrivatelessonInformation(record);
+      console.log("kliknuo na "+ this.privatelessonInformation.day)
     },
     goToReservation() {
       if (this.token !== "") {
-        let privatnicas = this.flightInformation
+        let privatnicas = this.privatelessonInformation
         console.log("privatni cas " + privatnicas);
         console.log(privatnicas);
         this.$router.push({ name: 'Reservation', params: {privatnicas}});

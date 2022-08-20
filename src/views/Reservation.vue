@@ -6,9 +6,9 @@
     <h2>Your private lesson</h2>
 
     <ul class="list-group">
-      <li class="list-group-item">Day:  {{ this.flightInformation.day }}  </li>
-      <li class="list-group-item">Time:  {{ this.flightInformation.time }}  </li>
-      <li class="list-group-item">Coach:  {{ this.flightInformation.coach }}  </li>
+      <li class="list-group-item">Day:  {{ this.privatelessonInformation.day }}  </li>
+      <li class="list-group-item">Time:  {{ this.privatelessonInformation.time }}  </li>
+      <li class="list-group-item">Coach:  {{ this.privatelessonInformation.coach }}  </li>
       <br>
     </ul>
     
@@ -36,7 +36,7 @@ export default {
   computed: {
     ...mapState([
       'token',
-      'flightInformation'
+      'privatelessonInformation'
     ])
   },
 
@@ -56,7 +56,7 @@ export default {
     ...mapMutations([
       'removeToken',
       'setToken',
-      'setFlightInformation'
+      'setPrivatelessonInformation'
     ]),
 
     logout() {
@@ -66,8 +66,8 @@ export default {
       goToPrivateLessons() {
 
         
-        this.setFlightInformation("");
-        this.$router.push({ name: 'PrivateLessons'});
+        this.setPrivatelessonInformation("");
+        this.$router.push({ name: 'Reservation'});
 
     }
   },

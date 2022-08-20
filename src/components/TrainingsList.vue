@@ -53,7 +53,6 @@ export default {
     ]),
     trainingsTable: function () {
       return this.trainings;
-      // .filter(book => book.libraryId == this.$route.params.id); //mora da bude == umesto ===, jer inace nece da ih nadje kada se uradi drugi put
     }
   },
 

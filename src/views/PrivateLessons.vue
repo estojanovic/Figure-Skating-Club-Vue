@@ -23,7 +23,7 @@ export default {
   },
 
   mounted() {
-    this.fetchFlights();
+    this.fetchPrivatelessons();
   },
 
   computed: {
@@ -34,7 +34,7 @@ export default {
 
   methods: {
     ...mapActions([
-      'fetchFlights'
+      'fetchPrivatelessons'
     ])
   }
 

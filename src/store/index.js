@@ -7,9 +7,9 @@ export default new Vuex.Store({
   state: {
     token: '',
 
-    flights: [],
-    flight: null,
-    flightInformation: {
+    privatelessons: [],
+    privatelesson: null,
+    privatelessonInformation: {
       day: '', time: '', coach: ''
     },
 
@@ -41,16 +41,16 @@ export default new Vuex.Store({
       localStorage.token = '';
     },
 
-    setFlightInformation(state, flight) {
-      // state.flightInformation.id = flight.id;
-      state.flightInformation.day = flight.day;
-      state.flightInformation.time = flight.time;
-      state.flightInformation.coach = flight.coach;
+    setPrivatelessonInformation(state, privatelesson) {
+      
+      state.privatelessonInformation.day = privatelesson.day;
+      state.privatelessonInformation.time = privatelesson.time;
+      state.privatelessonInformation.coach = privatelesson.coach;
      
     },
 
-    setFlights(state, flights) {
-      state.flights = flights;
+    setPrivatelessons(state, privatelessons) {
+      state.privatelessons = privatelessons;
     },
 
     setIceskateInformation(state, iceskate){
@@ -119,7 +119,7 @@ export default new Vuex.Store({
     },
 
 
-    fetchFlights({ commit }){
+    fetchPrivatelessons({ commit }){
       fetch('http://localhost:7000/admin/privatelessons',{
         headers: {
           'authorization': `Bearer ${localStorage.token}`
@@ -127,7 +127,7 @@ export default new Vuex.Store({
         method: 'GET'
       })
           .then( obj => obj.json() )
-          .then( res => commit('setFlights', res));
+          .then( res => commit('setPrivatelessons', res));
     },
 
     fetchIceskates({ commit }){

@@ -2,7 +2,7 @@
   <div id="app">
     <Header subtitle="Create account"/>
 
-    <b-form @submit="onSubmit">
+    <b-form name="myForm" @submit="onSubmit">
 
       <b-form-group label="Name:" label-for="name">
         <b-form-input id="name" v-model="form.name" placeholder="Enter name" required></b-form-input>
@@ -62,6 +62,28 @@
 
       onSubmit(e) {
         e.preventDefault();
+        
+        let w = document.forms["myForm"]["password"].value;
+        if (w === "") {
+          alert("Password must be filled out");
+          return false;
+        } 
+        else if (w.length < 5) {
+          alert("Password length must be minimum 5");
+          return false;
+        }
+        else if (w.length > 20) {
+          alert("Password length must be maximum 20");
+          return false;
+        }
+        
+        let q = document.forms["myForm"]["role"].value;
+        if (q != "klijent") {
+            alert("Role must be klijent");
+            return false;
+          }
+
+
         console.log(this.form);
         console.log("form");
         this.register(this.form);
@@ -76,3 +98,4 @@
 <style scoped>
 
 </style>
+
