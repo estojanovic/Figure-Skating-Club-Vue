@@ -21,11 +21,13 @@
     </b-table>
    
 
-   <b-button v-on:click="cancelLesson()" >Cancel lesson</b-button>
+   
   </div>
 </template>
 
 <script>
+
+//<b-button v-on:click="cancelLesson()" >Cancel lesson</b-button>
 
 import { mapActions, mapState, mapMutations } from 'vuex';
 

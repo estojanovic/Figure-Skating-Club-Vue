@@ -91,6 +91,11 @@ export default new Vuex.Store({
     setReservations(state, reservations) {
       state.reservations = reservations;
     }
+    
+    // ,
+    // addReservation(state, obj) {
+      
+    // }
 
   },
 
@@ -171,6 +176,11 @@ export default new Vuex.Store({
           .then( res => commit('setTrainings', res));
     }
     
+    // ,
+    // socket_reservation({ commit }, msg) {
+    //   const reservation = JSON.parse(msg);
+    //   commit('addReservation', { reservation: reservation });
+    // }
 
 
 

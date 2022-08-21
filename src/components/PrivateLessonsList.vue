@@ -83,10 +83,7 @@ export default {
     },
     goToReservation() {
       if (this.token !== "") {
-        //let privatnicas = this.privatelessonInformation
-        //console.log("privatni cas " + privatnicas);
-        //console.log(privatnicas);
-
+        
         var reservation_object = {
             day: this.privatelessonInformation.day,
             time: this.privatelessonInformation.time,
@@ -96,11 +93,13 @@ export default {
         //this.setReservationInformation(this.privatelessonInformation);
         this.setPrivatelessonInformation("");
         this.reservations.push(reservation_object);
-        //console.log("this works");
-        //console.log(this.reservations);
         
         this.$router.push({ name: 'Reservation'});
-        //ovde treba da se upisuje u bazu i brise iz tabele privatelessons
+        
+
+        //emituje poruku serveru da bi je ubacio u bazu i broadcastuje svim klijentima
+        //this.$socket.emit('reservation', { body: reservation_object, token: this.token });
+        
 
       }
       else alert("You cannot make reservations. Log in first!");
