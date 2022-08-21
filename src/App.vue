@@ -64,6 +64,7 @@ export default {
 
     logout(){
       this.removeToken();
+      this.$router.push({ name: 'Home'});
     }
 
   }

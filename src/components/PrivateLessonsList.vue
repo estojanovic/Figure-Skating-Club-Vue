@@ -53,7 +53,9 @@ export default {
     ...mapState([
       'privatelessons',
       'token',
-      'privatelessonInformation'
+      'privatelessonInformation',
+      'reservationInformation',
+      'reservations'
     ]),
     privatelessonsTable: function () {
       return this.privatelessons;
@@ -70,7 +72,8 @@ export default {
   methods: {
 
     ...mapMutations([
-      'setPrivatelessonInformation'
+      'setPrivatelessonInformation',
+      'setReservationInformation'
     ]),
 
     rowClicked(record) {
@@ -80,10 +83,23 @@ export default {
     },
     goToReservation() {
       if (this.token !== "") {
-        let privatnicas = this.privatelessonInformation
-        console.log("privatni cas " + privatnicas);
-        console.log(privatnicas);
-        this.$router.push({ name: 'Reservation', params: {privatnicas}});
+        //let privatnicas = this.privatelessonInformation
+        //console.log("privatni cas " + privatnicas);
+        //console.log(privatnicas);
+
+        var reservation_object = {
+            day: this.privatelessonInformation.day,
+            time: this.privatelessonInformation.time,
+            coach: this.privatelessonInformation.coach
+        };
+        
+        //this.setReservationInformation(this.privatelessonInformation);
+        this.setPrivatelessonInformation("");
+        this.reservations.push(reservation_object);
+        //console.log("this works");
+        //console.log(this.reservations);
+        
+        this.$router.push({ name: 'Reservation'});
         //ovde treba da se upisuje u bazu i brise iz tabele privatelessons
 
       }

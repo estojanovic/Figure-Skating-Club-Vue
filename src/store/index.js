@@ -23,7 +23,14 @@ export default new Vuex.Store({
     training: null,
     trainingInformation:{
       day: '', time: '', coach1: '', coach2: ''
+    },
+
+    reservations: [],
+    reservation: null,
+    reservationInformation:{
+      day: '', time: '', coach: ''
     }
+
 
   },   
 
@@ -71,6 +78,18 @@ export default new Vuex.Store({
 
     setTrainings(state, trainings){
       state.trainings = trainings;
+    },
+
+    setReservationInformation(state, reservation) {
+      
+      state.reservationInformation.day = reservation.day;
+      state.reservationInformation.time = reservation.time;
+      state.reservationInformation.coach = reservation.coach;
+     
+    },
+
+    setReservations(state, reservations) {
+      state.reservations = reservations;
     }
 
   },
